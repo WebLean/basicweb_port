@@ -1,0 +1,25 @@
+{
+  "name": "basicweb_post",
+  "version": "1.0.0",
+  "description": "기본 게시판 구현~",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/WebLean/basicweb_post.git"
+  },
+  "author": "s01va",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/WebLean/basicweb_post/issues"
+  },
+  "homepage": "https://github.com/WebLean/basicweb_post#readme",
+  "dependencies": {
+    "ejs": "^3.1.6",
+    "express": "^4.17.1",
+    "method-override": "^3.0.0",
+    "mongoose": "^5.12.13"
+  }
+}
