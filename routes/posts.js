@@ -18,6 +18,14 @@ router.get('/new', function(req, res) {
     res.render('posts/new');
 });
 
+//Create
+router.post('/', function(req, res) {
+    Post.create(req.body, function(err, post) {
+        if(err) return res.json(err);
+        res.redirect('/posts');
+    });
+});
+
 //Show
 router.get('/:id', function(res, req) {
     Post.findOne({_id:req.params.id}, function(err, post) {
