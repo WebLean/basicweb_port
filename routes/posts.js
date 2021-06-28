@@ -1,7 +1,7 @@
 //CRUD 구현
 let express = require('express');
 let router = express.Router();
-let Post = require('../models/Post');
+Post = require('../models/Post');
 
 //Index
 router.get('/', function(req, res) {
@@ -27,7 +27,7 @@ router.post('/', function(req, res) {
 });
 
 //Show
-router.get('/:id', function(res, req) {
+router.get('/:id', function(req, res) {
     Post.findOne({_id:req.params.id}, function(err, post) {
         if (err) return res.json(err);
         res.render('posts/show', {post:post});
@@ -35,7 +35,7 @@ router.get('/:id', function(res, req) {
 });
 
 //Edit
-router.get('/:id/edit', function(res, req) {
+router.get('/:id/edit', function(req, res) {
     Post.findOne({_id:req.params.id}, function(err, post) {
         if (err) return res.json(err);
         res.render('posts/edit', {post:post});
