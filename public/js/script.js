@@ -16,8 +16,8 @@ $(function() {
     }
 
     function convertDate() {
-        $('[date-date]').each(function(index, element) {
-            let dateString = $(element).date('date');
+        $('[data-date]').each(function(index, element) {
+            let dateString = $(element).data('date');
             if (dateString) {
                 let date = new Date(dateString);
                 $(element).html(getDate(date));
@@ -26,8 +26,8 @@ $(function() {
     }
 
     function convertDateTime() {
-        $('[date-date-time]').each(function(index, element) {
-            let dateString = $(element).date('date-time');
+        $('[data-date-time]').each(function(index, element) {
+            let dateString = $(element).data('date-time');
             if (dateString) {
                 let date = new Date(dateString);
                 $(element).html(getDate(date) + ' ' + getTime(date));
