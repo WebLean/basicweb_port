@@ -1,4 +1,4 @@
-//CRUD 구현
+
 let express = require('express');
 let router = express.Router();
 let Post = require('../models/Post');

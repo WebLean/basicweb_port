@@ -66,4 +66,4 @@ userSchema.path('password').validate(function(v) {
 });
 
 let User = mongoose.model('user', userSchema);
-module.export = User;
+module.exports = User;
