@@ -1,7 +1,7 @@
 //CRUD 구현
 let express = require('express');
 let router = express.Router();
-Post = require('../models/Post');
+let Post = require('../models/Post');
 
 //Index
 router.get('/', function(req, res) {
