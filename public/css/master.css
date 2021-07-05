@@ -3,6 +3,17 @@
 body {
     font-family: 'Raleway', sans-serif;
 }
+
+a:link {
+    text-decoration: none;
+}
+a:visited {
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: underline;
+}
+
 .breadcrumb-item {
     font-size: 0.8em !important;
 }
