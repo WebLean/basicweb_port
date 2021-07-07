@@ -5,6 +5,7 @@ const mongoose = require('mongoose');
 const methodOverride = require('method-override');
 const flash = require('connect-flash')
 const session = require('express-session')
+const passport = require('./config/passport');
 const app = express();
 
 //DB setting
@@ -28,7 +29,17 @@ app.use(express.json());
 app.use(express.urlencoded({extended:true}));
 app.use(methodOverride('_method'));
 app.use(flash());
-app.use(session({secret:'Mysecret', resave:true, saveUninitialized:true}));
+app.use(session({secret:process.env.Nodejs_sessionSecret, resave:true, saveUninitialized:true}));
+//app.use(session({secret:'Mysecret', resave:true, saveUninitialized:true}));
+
+app.use(passport.initialize());
+app.use(passport.session());
+
+app.use(function(req, res, next) {
+    res.locals.isAuthenticated = req.isAuthenticated();
+    res.locals.currentUser = req.user;
+    next();
+});
 
 app.use('/', require('./routes/home'));
 app.use('/posts', require('./routes/posts'));
